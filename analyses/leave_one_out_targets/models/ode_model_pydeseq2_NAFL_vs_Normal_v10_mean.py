@@ -172,8 +172,8 @@ STATE_VARS = [
     'P_Development_of_NAFLD_active',    # Pathway: P_Development_of_NAFLD
     'P_Development_of_steatohepatitis_inactive',  # Pathway: P_Development_of_steatohepatitis
     'P_Development_of_steatohepatitis_active',    # Pathway: P_Development_of_steatohepatitis
-    'P_Figrosis_inactive',  # Pathway: P_Figrosis
-    'P_Figrosis_active',    # Pathway: P_Figrosis
+    'P_Fibrosis_inactive',  # Pathway: P_Fibrosis
+    'P_Fibrosis_active',    # Pathway: P_Fibrosis
     'P_HCC_proliferation_inactive',  # Pathway: P_HCC_proliferation
     'P_HCC_proliferation_active',    # Pathway: P_HCC_proliferation
     'P_Hepatocyte_injury_inactive',  # Pathway: P_Hepatocyte_injury
@@ -254,7 +254,7 @@ PATHWAY_METADATA = {
     'P_De_novo_fatty_acid_synthesis': {'pathway_name': 'P_De_novo_fatty_acid_synthesis', 'type': 'pathway_output', 'initial_level': 100.0},  # initial_inactive=100.0
     'P_Development_of_NAFLD': {'pathway_name': 'P_Development_of_NAFLD', 'type': 'pathway_output', 'initial_level': 100.0},  # initial_inactive=100.0
     'P_Development_of_steatohepatitis': {'pathway_name': 'P_Development_of_steatohepatitis', 'type': 'pathway_output', 'initial_level': 100.0},  # initial_inactive=100.0
-    'P_Figrosis': {'pathway_name': 'P_Figrosis', 'type': 'pathway_output', 'initial_level': 100.0},  # initial_inactive=100.0
+    'P_Fibrosis': {'pathway_name': 'P_Fibrosis', 'type': 'pathway_output', 'initial_level': 100.0},  # initial_inactive=100.0
     'P_HCC_proliferation': {'pathway_name': 'P_HCC_proliferation', 'type': 'pathway_output', 'initial_level': 100.0},  # initial_inactive=100.0
     'P_Hepatocyte_injury': {'pathway_name': 'P_Hepatocyte_injury', 'type': 'pathway_output', 'initial_level': 100.0},  # initial_inactive=100.0
     'P_Hyperinsulinemia': {'pathway_name': 'P_Hyperinsulinemia', 'type': 'pathway_output', 'initial_level': 100.0},  # initial_inactive=100.0
@@ -545,9 +545,9 @@ def ode_system(y, t, params=None):
     P_Development_of_steatohepatitis_inactive = y[126]
     P_Development_of_steatohepatitis_active   = y[127]
 
-    # Pathway: P_Figrosis
-    P_Figrosis_inactive = y[128]
-    P_Figrosis_active   = y[129]
+    # Pathway: P_Fibrosis
+    P_Fibrosis_inactive = y[128]
+    P_Fibrosis_active   = y[129]
 
     # Pathway: P_HCC_proliferation
     P_HCC_proliferation_inactive = y[130]
@@ -827,9 +827,9 @@ def ode_system(y, t, params=None):
     dydt[126]   = -(((2.0 * IL_6_active * P_Development_of_steatohepatitis_inactive**2.0) / (2.0**2.0 + P_Development_of_steatohepatitis_inactive**2.0)) + ((2.0 * IL_1_active * P_Development_of_steatohepatitis_inactive**2.0) / (2.0**2.0 + P_Development_of_steatohepatitis_inactive**2.0)) + ((2.0 * TNFa_active * P_Development_of_steatohepatitis_inactive**2.0) / (2.0**2.0 + P_Development_of_steatohepatitis_inactive**2.0))) + ((2.0 * P_Development_of_steatohepatitis_active**2.0) / (2.0**2.0 + P_Development_of_steatohepatitis_active**2.0))
     dydt[127] = (((2.0 * IL_6_active * P_Development_of_steatohepatitis_inactive**2.0) / (2.0**2.0 + P_Development_of_steatohepatitis_inactive**2.0)) + ((2.0 * IL_1_active * P_Development_of_steatohepatitis_inactive**2.0) / (2.0**2.0 + P_Development_of_steatohepatitis_inactive**2.0)) + ((2.0 * TNFa_active * P_Development_of_steatohepatitis_inactive**2.0) / (2.0**2.0 + P_Development_of_steatohepatitis_inactive**2.0))) - ((2.0 * P_Development_of_steatohepatitis_active**2.0) / (2.0**2.0 + P_Development_of_steatohepatitis_active**2.0))
 
-    # Pathway: P_Figrosis
-    dydt[128]   = -(((2.0 * TGF_b1_active * P_Figrosis_inactive**2.0) / (2.0**2.0 + P_Figrosis_inactive**2.0))) + ((2.0 * P_Figrosis_active**2.0) / (2.0**2.0 + P_Figrosis_active**2.0))
-    dydt[129] = (((2.0 * TGF_b1_active * P_Figrosis_inactive**2.0) / (2.0**2.0 + P_Figrosis_inactive**2.0))) - ((2.0 * P_Figrosis_active**2.0) / (2.0**2.0 + P_Figrosis_active**2.0))
+    # Pathway: P_Fibrosis
+    dydt[128]   = -(((2.0 * TGF_b1_active * P_Fibrosis_inactive**2.0) / (2.0**2.0 + P_Fibrosis_inactive**2.0))) + ((2.0 * P_Fibrosis_active**2.0) / (2.0**2.0 + P_Fibrosis_active**2.0))
+    dydt[129] = (((2.0 * TGF_b1_active * P_Fibrosis_inactive**2.0) / (2.0**2.0 + P_Fibrosis_inactive**2.0))) - ((2.0 * P_Fibrosis_active**2.0) / (2.0**2.0 + P_Fibrosis_active**2.0))
 
     # Pathway: P_HCC_proliferation
     dydt[130]   = -(((2.0 * JNK1_2_active * P_HCC_proliferation_inactive**2.0) / (2.0**2.0 + P_HCC_proliferation_inactive**2.0))) + ((2.0 * P_HCC_proliferation_active**2.0) / (2.0**2.0 + P_HCC_proliferation_active**2.0))
