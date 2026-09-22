@@ -1,0 +1,202 @@
+{
+  "window1_convergence_check": {
+    "NASH": {
+      "window1_h": 300,
+      "max_rel_gap_vs_asymptote_pct": 4.871845423303045e-13
+    },
+    "NAFL": {
+      "window1_h": 300,
+      "max_rel_gap_vs_asymptote_pct": 2.0164296850845877e-10
+    }
+  },
+  "summary_ki0.3": [
+    {
+      "Output": "P_Hepatocyte_injury",
+      "NAFL_reduction_pct": 2.373,
+      "NASH_reduction_pct": 1.345,
+      "NAFL_over_NASH_ratio": 1.7643
+    },
+    {
+      "Output": "P_Cell_death",
+      "NAFL_reduction_pct": 1.009,
+      "NASH_reduction_pct": 0.498,
+      "NAFL_over_NASH_ratio": 2.0254
+    },
+    {
+      "Output": "P_Inflammation",
+      "NAFL_reduction_pct": 0.884,
+      "NASH_reduction_pct": 0.442,
+      "NAFL_over_NASH_ratio": 2.0012
+    }
+  ],
+  "full_dose_response": [
+    {
+      "Condition": "NASH",
+      "Output": "P_Hepatocyte_injury",
+      "ki": 1.0,
+      "AUC": 29389.689,
+      "pct_reduction_vs_ki1": 0.0
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Hepatocyte_injury",
+      "ki": 0.7,
+      "AUC": 29323.363,
+      "pct_reduction_vs_ki1": 0.2257
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Hepatocyte_injury",
+      "ki": 0.5,
+      "AUC": 29233.804,
+      "pct_reduction_vs_ki1": 0.5304
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Hepatocyte_injury",
+      "ki": 0.3,
+      "AUC": 28994.35,
+      "pct_reduction_vs_ki1": 1.3452
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Cell_death",
+      "ki": 1.0,
+      "AUC": 29331.053,
+      "pct_reduction_vs_ki1": 0.0
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Cell_death",
+      "ki": 0.7,
+      "AUC": 29298.604,
+      "pct_reduction_vs_ki1": 0.1106
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Cell_death",
+      "ki": 0.5,
+      "AUC": 29260.634,
+      "pct_reduction_vs_ki1": 0.2401
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Cell_death",
+      "ki": 0.3,
+      "AUC": 29184.974,
+      "pct_reduction_vs_ki1": 0.498
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Inflammation",
+      "ki": 1.0,
+      "AUC": 29752.733,
+      "pct_reduction_vs_ki1": 0.0
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Inflammation",
+      "ki": 0.7,
+      "AUC": 29742.295,
+      "pct_reduction_vs_ki1": 0.0351
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Inflammation",
+      "ki": 0.5,
+      "AUC": 29722.714,
+      "pct_reduction_vs_ki1": 0.1009
+    },
+    {
+      "Condition": "NASH",
+      "Output": "P_Inflammation",
+      "ki": 0.3,
+      "AUC": 29621.293,
+      "pct_reduction_vs_ki1": 0.4418
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Hepatocyte_injury",
+      "ki": 1.0,
+      "AUC": 29325.216,
+      "pct_reduction_vs_ki1": 0.0
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Hepatocyte_injury",
+      "ki": 0.7,
+      "AUC": 29229.672,
+      "pct_reduction_vs_ki1": 0.3258
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Hepatocyte_injury",
+      "ki": 0.5,
+      "AUC": 29091.259,
+      "pct_reduction_vs_ki1": 0.7978
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Hepatocyte_injury",
+      "ki": 0.3,
+      "AUC": 28629.237,
+      "pct_reduction_vs_ki1": 2.3733
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Cell_death",
+      "ki": 1.0,
+      "AUC": 29216.718,
+      "pct_reduction_vs_ki1": 0.0
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Cell_death",
+      "ki": 0.7,
+      "AUC": 29159.753,
+      "pct_reduction_vs_ki1": 0.195
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Cell_death",
+      "ki": 0.5,
+      "AUC": 29087.716,
+      "pct_reduction_vs_ki1": 0.4415
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Cell_death",
+      "ki": 0.3,
+      "AUC": 28921.996,
+      "pct_reduction_vs_ki1": 1.0087
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Inflammation",
+      "ki": 1.0,
+      "AUC": 29468.554,
+      "pct_reduction_vs_ki1": 0.0
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Inflammation",
+      "ki": 0.7,
+      "AUC": 29424.572,
+      "pct_reduction_vs_ki1": 0.1493
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Inflammation",
+      "ki": 0.5,
+      "AUC": 29364.307,
+      "pct_reduction_vs_ki1": 0.3538
+    },
+    {
+      "Condition": "NAFL",
+      "Output": "P_Inflammation",
+      "ki": 0.3,
+      "AUC": 29208.031,
+      "pct_reduction_vs_ki1": 0.8841
+    }
+  ]
+}

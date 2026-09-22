@@ -1,0 +1,14 @@
+# Fill in exact pinned versions from your working `deseq2_env` conda
+# environment before publishing, e.g.:
+#   conda activate deseq2_env
+#   pip freeze > requirements.txt
+# Below are the known top-level dependencies (unpinned) as a starting point.
+
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+openpyxl
+networkx
+pydeseq2

@@ -1,0 +1,22 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Environments
+.venv/
+env/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large / regenerable outputs — keep repo lean
+*.pdf
+figures/*.png
+figures/*.svg
+!figures/.gitkeep
+
+# Raw GEO data (download separately; see README)
+data/raw/

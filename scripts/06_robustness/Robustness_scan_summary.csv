@@ -1,0 +1,6 @@
+n,ksp,primary,P_Hepatocyte_injury,P_Hepatocyte_injury_NAFL>NASH,P_Cell_death,P_Cell_death_NAFL>NASH,P_Inflammation,P_Inflammation_NAFL>NASH,all_outputs_hold
+1.0,2.0,False,1.006,True,2.316,True,4.366,True,True
+2.0,2.0,True,2.105,True,2.443,True,3.034,True,True
+4.0,2.0,False,1.166,True,2.896,True,2.039,True,True
+2.0,1.0,False,2.646,True,2.584,True,2.397,True,True
+2.0,4.0,False,1.618,True,2.224,True,3.421,True,True
