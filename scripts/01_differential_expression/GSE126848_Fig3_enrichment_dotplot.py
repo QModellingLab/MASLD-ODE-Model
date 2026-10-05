@@ -31,7 +31,7 @@ import warnings; warnings.filterwarnings('ignore')
 
 plt.rcParams.update({
     'font.family': 'sans-serif',
-    'font.sans-serif': ['Calibri', 'Arial', 'DejaVu Sans'],
+    'font.sans-serif': ['Calibri', 'Carlito', 'Arial', 'Liberation Sans', 'DejaVu Sans'],  # Carlito/Liberation = metric-compatible fallbacks on Linux/macOS
 })
 
 # gseapy is imported lazily inside do_enrichment() (only needed when
@@ -45,6 +45,11 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEG_FILE   = os.path.join(SCRIPT_DIR, "DEG_pydeseq2_NASH_vs_Normal.csv")
 OUTPUT_DIR = SCRIPT_DIR
 ENRICH_XLSX = os.path.join(OUTPUT_DIR, "Enrichment_NASH_vs_Normal_pyDESeq2.xlsx")
+
+# Journal submission: npj SBA requires figure titles to be removed from the image
+# file (the title is given in the figure legend of the manuscript instead).
+# Set SHOW_TITLE = True to draw the descriptive title (e.g. for slides).
+SHOW_TITLE = False
 
 P_THR  = 0.05
 FC_THR = 1.0
@@ -232,7 +237,7 @@ def make_dotplot(results):
     fig_h = max_rows * 0.32 + 2.2  # extra top/bottom margin
 
     fig, axes = plt.subplots(1, 2, figsize=(11.0, fig_h))
-    fig.subplots_adjust(wspace=2.00, top=0.90, bottom=0.10, left=0.24, right=0.96)
+    fig.subplots_adjust(wspace=2.00, top=(0.90 if SHOW_TITLE else 0.96), bottom=0.10, left=0.24, right=0.96)
 
     for ax, (title, up_data, dn_data) in zip(axes, panels):
         up_r = up_data.iloc[::-1].copy() if len(up_data) > 0 else pd.DataFrame()
@@ -303,8 +308,9 @@ def make_dotplot(results):
     axes[0].set_xlabel('-log₁₀(Adjusted P-value)', fontsize=14)
     axes[1].set_xlabel('-log₁₀(Adjusted P-value)', fontsize=14)
 
-    fig.suptitle('Functional Enrichment: NASH vs. Normal (pyDESeq2 DEGs)',
-                 fontsize=18, fontweight='bold', x=0.5, y=0.97)
+    if SHOW_TITLE:
+        fig.suptitle('Functional Enrichment: NASH vs. Normal (pyDESeq2 DEGs)',
+                     fontsize=18, fontweight='bold', x=0.5, y=0.97)
 
     # Legend: use same sizing function for consistency
     legend_el = [

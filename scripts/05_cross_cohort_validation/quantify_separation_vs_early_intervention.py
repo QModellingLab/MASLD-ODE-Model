@@ -69,6 +69,11 @@ AUC_TABLE = os.path.join(SCRIPT_DIR, 'Table_Silymarin_AUCreduction_NAFL_vs_NASH_
 OUT_XLSX = os.path.join(SCRIPT_DIR, 'Table_SeparationIndex_vs_AUCratio.xlsx')
 OUT_FIG  = os.path.join(SCRIPT_DIR, 'Fig_SeparationIndex_vs_AUCratio_scatter.png')
 
+# Journal submission: npj SBA requires figure titles/captions to be removed from the
+# image file (they are given in the figure legend of the manuscript instead).
+# Set SHOW_TITLE = True to draw the descriptive title (e.g. for slides).
+SHOW_TITLE = False
+
 T_MAX, N_POINTS = 300.0, 3001
 t = np.linspace(0, T_MAX, N_POINTS)
 OUTPUTS = ['P_Cell_death', 'P_Hepatocyte_injury', 'P_Inflammation']
@@ -76,7 +81,9 @@ OUTPUTS = ['P_Cell_death', 'P_Hepatocyte_injury', 'P_Inflammation']
 KNOWN_EXCEPTIONS = {('GSE48452', 'P_Hepatocyte_injury'), ('GSE89632', 'P_Hepatocyte_injury')}
 
 def auc_of(traj):
-    return float(np.trapezoid(traj, t))
+    # numpy < 2.0 only provides trapz; numpy >= 2.0 renamed it to trapezoid
+    f = getattr(np, 'trapezoid', None) or np.trapz
+    return float(f(traj, t))
 
 plt.rcParams.update({
     'font.family': 'sans-serif', 'font.sans-serif': ['Arial', 'DejaVu Sans'],
@@ -193,6 +200,8 @@ def main():
         lambda r: (r['Dataset'], r['P_output']) in KNOWN_EXCEPTIONS, axis=1)
 
     print(f'\n[Merged table] {len(merged)} rows (6 dataset x 3 output = 18 expected)')
+    if len(merged) != 18:
+        raise SystemExit('Expected 18 dataset-output rows; check RATIOS paths before plotting.')
 
     # ---------- Correlation analysis ----------
     valid = merged.dropna(subset=['Separation_Index_%', 'NAFL/NASH_ratio'])
@@ -316,14 +325,17 @@ def main():
     ax.set_xlabel('log10(Disease-Normal Separation Index, shifted to positive)\n'
                    '[(AUC_NASH − AUC_Normal) / AUC_Normal × 100, t=0–300h]')
     ax.set_ylabel('Silymarin AUC reduction ratio (NAFL / NASH)\n'
-                   '[>1 = NAFL-stage intervention more effective]')
-    ax.set_title('Disease-Normal separation predicts early-intervention advantage\n'
-                  f'(Spearman r={spearman_r:.2f} p={spearman_p:.3f}; '
-                  f'Mann-Whitney (separated vs not) p={mw_p:.3f})')
-    ax.legend(fontsize=10, loc='best')
+                   '[>1 = larger relative reduction at the steatosis stage]')
+    if SHOW_TITLE:
+        ax.set_title('Disease-normal separation and the stage-dependent predicted response (exploratory)\n'
+                     f'(Spearman r={spearman_r:.2f} p={spearman_p:.3f}; '
+                     f'Mann-Whitney (separated vs not) p={mw_p:.3f})\n'
+                     'Not robust to cohort-block permutation (P = 0.07-0.21)', fontsize=12)
+    ax.legend(fontsize=10, loc='upper left')
     ax.grid(alpha=0.25)
     fig.tight_layout()
     fig.savefig(OUT_FIG, dpi=300, bbox_inches='tight')
+    fig.savefig(os.path.splitext(OUT_FIG)[0] + '.pdf', bbox_inches='tight')   # vector copy
     plt.close(fig)
     print(f'  Saved: {OUT_FIG}')
 
