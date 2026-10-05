@@ -46,6 +46,14 @@ Author: Yu-Yao Tseng  |  2026
 """
 import os, importlib.util, types
 import numpy as np
+
+
+def _trapz(y, x):
+    """Compatibility wrapper: numpy>=2.0 renamed trapz to trapezoid; older
+    installs (as in the conda deseq2_env used to run this repository) only
+    have trapz. Use whichever the installed numpy provides."""
+    f = getattr(np, 'trapezoid', None) or np.trapz
+    return f(y, x)
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
@@ -248,8 +256,8 @@ def t_half_val(traj):
 
 
 def auc_pct_reduction(traj_drug, traj_nodrug):
-    a0 = np.trapezoid(traj_nodrug, t)
-    a1 = np.trapezoid(traj_drug, t)
+    a0 = _trapz(traj_nodrug, t)
+    a1 = _trapz(traj_drug, t)
     return (a0 - a1) / a0 * 100 if a0 > 0 else np.nan
 
 
@@ -526,8 +534,7 @@ def main():
     fig_b.legend(handles=legend_b, loc='lower center', ncol=5, fontsize=13,
                  bbox_to_anchor=(0.5, -0.02), framealpha=0.9)
     fig_b.suptitle(
-        'Silymarin intervention: cross-cohort validation across 6 datasets '
-        '(t = 300 h, ki = 0.3 = 70% inhibition)',
+        'Silymarin intervention across six cohorts (t = 300 h)',
         fontsize=17, fontweight='bold')
 
     fig_b.savefig(OUT_FIG_B, dpi=300, bbox_inches='tight')
