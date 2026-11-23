@@ -27,7 +27,7 @@ PART A -- Network steady-state (root-finding, not time-integration)
   (steady state) -- can be compared directly.
 
 PART B -- Single-reaction algebraic Hill/receptor-reserve calculation
-  For each core output's direct upstream driver(s) (Table S3: CASP3/CASP7
+  For each core output's direct upstream driver(s) (Table S16: CASP3/CASP7
   for P_Hepatocyte_injury; FasL/TNFa for P_Cell_death; IL_8/TGF_b1 for
   P_Inflammation), the Hill-saturation fraction h(x) = x^n/(ksp^n+x^n) is
   evaluated purely algebraically at the driver's own stage-specific
@@ -54,7 +54,7 @@ from hillcurve_common import (
 
 N_HILL, KSP_HILL = 2.0, 2.0  # matches manuscript's fixed Vmax=ksp=n=kcat=2.0
 
-# Direct upstream drivers per core output (Table S3)
+# Direct upstream drivers per core output (Table S16)
 DIRECT_DRIVERS = {
     'P_Hepatocyte_injury': ['CASP3', 'CASP7'],
     'P_Cell_death': ['FasL', 'TNFa'],
