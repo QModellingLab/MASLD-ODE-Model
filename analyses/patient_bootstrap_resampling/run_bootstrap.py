@@ -9,7 +9,7 @@ For each bootstrap iteration:
   2. Re-run PyDESeq2 (single ~condition design, no batch correction) on the
      resampled count matrix -> gene-level log2FC for NASH_vs_Normal and NAFL_vs_Normal.
   3. Aggregate gene-level ratios (2^log2FC) to the 58 ODE nodes via arithmetic
-     mean (v10-Mean), using NODE_GENES mapping transcribed from Supplementary Table S1.
+     mean (v10-Mean), using NODE_GENES mapping transcribed from Supplementary Table S11.
   4. Build Y0 for NASH and NAFL baselines, run ODE (no-drug and ki=0.3 Silymarin)
      using the primary NASH model file (STATE_VARS / ode_system, with Silymarin
      ki=0.3 inhibition dynamically injected into the source at 8 target nodes).
