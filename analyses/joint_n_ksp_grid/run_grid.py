@@ -3,17 +3,17 @@
 """
 Joint n x ksp parameter grid (R3, minor point 3).
 
-The manuscript's Supplementary Table S4 varies the Hill coefficient (n) and
+The manuscript's Supplementary Table S4 (pre-revision numbering) varies the Hill coefficient (n) and
 half-saturation constant (ksp) ONE AT A TIME from the primary n=ksp=2 model
 (n=1,2,4 at ksp=2; ksp=1,4 at n=2 -- 5 combinations total including the
 primary). Reviewer 3 asks to vary them JOINTLY (a full grid) and to report
 the EFFECT MAGNITUDE, not just its sign/direction.
 
 This script runs the full 3x3 grid (n in {1,2,4}, ksp in {1,2,4} = 9
-combinations, including all 5 already in Table S4 plus 4 new joint
+combinations, including all 5 already in Table S4 (pre-revision numbering) plus 4 new joint
 combinations: (1,1),(1,4),(4,1),(4,4)) and reports, for each of the 3 core
 outputs: NASH %reduction, NAFL %reduction, the NAFL/NASH advantage ratio
-(same metric as Table 4 / Table S4), and the raw difference in percentage
+(same metric as Table 4 / Table S4 (pre-revision numbering)), and the raw difference in percentage
 points (diff_pp) as an explicit magnitude measure.
 
 Fast, deterministic, single run -- no batching or resampling needed
