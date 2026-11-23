@@ -22,7 +22,7 @@ Manuscript master notes 原本預估 global sensitivity 要花 1-2 天，那是�
 獨立計算 Morris mu*、mu、sigma、信賴區間，並報告 CASP3/CASP7/TNFa/FasL/
 IL_8/TGF_b1/Cytc/Bax 這些「有興趣的」節點在全部 58 個節點中排第幾名。
 
-第二支腳本額外做「與純拓樸排序比較」：從 Supplementary Table S2 的 106
+第二支腳本額外做「與純拓樸排序比較」：從 Supplementary Table S15 的 106
 條交互作用建立真實網路，計算每個節點的 out-degree（下游連結數）以及到
 每個 output 的最短路徑距離（hop 數），再用 Spearman 相關係數（附
 p-value）檢驗 Morris 排名是否可以單純用「這個基因連得多」或「這個基因
@@ -63,7 +63,7 @@ p-value）檢驗 Morris 排名是否可以單純用「這個基因連得多」�
 ------------------------------------------------------------
 global_sensitivity_analysis/
 ├── gsa_common.py                   <- 共用函式（獨立命名，不會跟其他資料夾撞名）
-├── edges_table_s2.py               <- Table S2 全部 106 條交互作用（已驗證節點名稱）
+├── edges_table_s2.py               <- Table S15 全部 106 條交互作用（已驗證節點名稱）
 ├── run_morris_gsa.py               <- 步驟 1：Morris 分析主程式
 ├── step2_topology_comparison.py    <- 步驟 2：拓樸比較
 ├── run_all.py                      <- 一鍵執行（依序跑步驟 1+2）
