@@ -1,7 +1,7 @@
 # composition_null_bound
 
 Composition-null bound for the stage-dependent predicted response
-(Supplementary Table S17; response to Reviewer 3, Major Comment 4 and Reviewer 1, Major Comment 2).
+(Supplementary Table S12; response to Reviewer 3, Major Comment 4 and Reviewer 1, Major Comment 2).
 
 ## Question
 
