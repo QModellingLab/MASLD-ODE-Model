@@ -66,7 +66,7 @@ NODE_LABEL = {"TNFa": "TNF-α", "FasL": "FAS ligand", "TGF_b1": "TGF-β1",
               "IL_1": "IL-1", "IL_6": "IL-6", "IL_8": "CXCL8/IL-8", "CASP7": "CASP7"}
 JOINT_FRACTIONS = [0.75, 0.50, 0.25, 0.10, 0.05, 0.02, 0.0]
 
-# Reference values of the primary analysis (manuscript Table 4 / Table S16)
+# Reference values of the primary analysis (manuscript Table 4 / Table S6)
 EXPECTED_BASELINE = {"P_Cell_death": 2.443, "P_Hepatocyte_injury": 2.105,
                      "P_Inflammation": 3.034}
 
