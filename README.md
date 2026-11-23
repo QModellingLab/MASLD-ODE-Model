@@ -132,8 +132,9 @@ pip install -r requirements.txt
 
 ## Citation
 
-If you use this code, please cite the manuscript above. A Zenodo DOI will be
-minted for the version-of-record upon publication.
+If you use this code, please cite the manuscript above and the archived code
+release: Zenodo, https://doi.org/10.5281/zenodo.22931572 (v1.1.0). All versions:
+https://doi.org/10.5281/zenodo.22892080.
 
 ## Contact
 
