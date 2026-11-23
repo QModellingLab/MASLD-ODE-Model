@@ -24,7 +24,7 @@ PART A - 網路穩態（root-finding，不依賴積分窗口）
   出現同樣的 NAFL>NASH 優勢，代表這個效應不是 AUC 窗口選擇的人工產物。
 
 PART B - 單一反應的代數 Hill / receptor-reserve 檢驗
-  完全不碰 ODE。針對三個核心 output 各自的直接上游 driver（Table S3：
+  完全不碰 ODE。針對三個核心 output 各自的直接上游 driver（Table S16：
   CASP3/CASP7 → P_Hepatocyte_injury；FasL/TNFa → P_Cell_death；
   IL_8/TGF_b1 → P_Inflammation），直接用代數 Hill 公式
   h(x)=x^n/(ksp^n+x^n)（n=ksp=2.0，跟 manuscript 一致）在該 driver 的
