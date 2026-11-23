@@ -3,7 +3,7 @@
 step1_validate.py
 ==================
 MANDATORY first step. Confirms the generic, topology-driven ODE model
-(generic_model.py, built purely from the 106-edge Supplementary Table S2
+(generic_model.py, built purely from the 106-edge Supplementary Table S15
 list) exactly reproduces the hardcoded NASH/NAFL model files' trajectories.
 
 If this does not pass, do NOT trust any scramble/null-model results --
