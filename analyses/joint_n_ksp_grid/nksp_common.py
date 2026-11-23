@@ -48,7 +48,7 @@ def make_y0(model):
 def parameterize_nksp(src, n, ksp):
     """Rewrite all Hill-kinetics constants in the model source to use Hill
     coefficient n and half-saturation constant ksp, keeping kcat/Vmax fixed
-    at 2.0 (matching the manuscript's own Supplementary Table S4 approach,
+    at 2.0 (matching the manuscript's own Supplementary Table S4 (pre-revision numbering) approach,
     which likewise varies only n and ksp).
 
     Every Hill term in the source has the form
@@ -58,7 +58,7 @@ def parameterize_nksp(src, n, ksp):
     unrelated multiplicative 2.0 (kcat), which must be left untouched.
 
     Verified (see joint_n_ksp_grid development notes / README) to exactly
-    reproduce the manuscript's already-published Supplementary Table S4
+    reproduce the manuscript's already-published Supplementary Table S4 (pre-revision numbering)
     values for (n=1,ksp=2) and (n=2,ksp=1), and Table 4's values for the
     primary (n=2,ksp=2) case.
     """
