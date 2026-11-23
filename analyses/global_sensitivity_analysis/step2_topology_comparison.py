@@ -9,7 +9,7 @@ Reviewer 1, Major Comment 6:
 
 For each of the 58 molecular nodes, two purely topological metrics are
 computed from the REAL hsa04932 interaction network (Supplementary Table
-S2, 106 edges; see edges_table_s2.py):
+S15, 106 edges; see edges_table_s2.py):
 
   1. out_degree   -- number of direct downstream targets (a simple "hub-ness"
                       metric; a purely topological analogue of "importance").
@@ -74,7 +74,7 @@ def main():
 
     G = build_graph()
     print(f'Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges '
-          f'(should be 106 edges from Table S2)')
+          f'(should be 106 edges from Table S15)')
 
     all_gsa = pd.read_excel(GSA_XLSX, sheet_name='all_combined')
     molecular_nodes = sorted(all_gsa['node'].unique())
