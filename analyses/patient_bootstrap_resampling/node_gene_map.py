@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Node -> constituent gene symbol list, transcribed from Supplementary Table S1
+Node -> constituent gene symbol list, transcribed from Supplementary Table S11
 (MASLD_supplementary_npjSBA_TSENG_20260716.docx). 58 molecular nodes.
 Used to recompute v10-Mean node-level ratios from bootstrap-resampled pyDESeq2 output.
 """
