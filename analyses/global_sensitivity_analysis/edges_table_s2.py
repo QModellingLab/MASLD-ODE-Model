@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Supplementary Table S2 (all 106 regulatory interactions of the hsa04932 ODE
+Supplementary Table S15 (all 106 regulatory interactions of the hsa04932 ODE
 network), transcribed with Source/Target converted from gene-symbol naming
-(as used in Table S2 itself) to the ODE node display names used in
-GENE_METADATA / STATE_VARS (as used in Table S1 and the model source files).
+(as used in Table S15 itself) to the ODE node display names used in
+GENE_METADATA / STATE_VARS (as used in Table S11 and the model source files).
 P_* pathway-output targets are already ODE node names and are left as-is.
 
 Used by step2_topology_comparison.py to build the directed interaction graph
 independently of the Morris global-sensitivity results.
 """
 
-# gene-symbol (as it appears in Table S2) -> ODE node display name (Table S1)
+# gene-symbol (as it appears in Table S15) -> ODE node display name (Table S11)
 SYMBOL_TO_NODE = {
     'ADIPOQ': 'ACDC', 'ADIPOR1': 'adipoR', 'AKT3': 'Akt', 'ATF4': 'ATF4',
     'BAX': 'Bax', 'BCL2L11': 'Bim', 'BID': 'Bid', 'CASP3': 'CASP3',
