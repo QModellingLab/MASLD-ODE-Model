@@ -16,7 +16,7 @@ Random-target / Matched-control Analysis (R1-7 / R2-4 / R3-5)
 ------------------------------------------------------------
 使用完全真實的 hsa04932 拓樸、真實動力學參數（Vmax=ksp=n=kcat=2.0）、
 真實的 GSE126848 主 cohort 初始條件（直接讀取模型檔內建的
-GENE_METADATA[node]['initial_ratio']，與 manuscript Table 2/S1、Table 4
+GENE_METADATA[node]['initial_ratio']，與 manuscript Table 2/S11、Table 4
 完全一致）——不對網路做任何 scramble（那是 edge_scramble_control 在做的
 事）。唯一改變的變數是：**被抑制（ki=0.3）的是哪 8 個節點**。
 
