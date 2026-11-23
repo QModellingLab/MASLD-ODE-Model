@@ -40,9 +40,9 @@ GENE_TO_NODE = {
 }
 
 # ---------------------------------------------------------------------
-# Supplementary Table S2: all 106 regulatory interactions (source, target,
+# Supplementary Table S15: all 106 regulatory interactions (source, target,
 # effect). "act" = activation, "inh" = inhibition. Gene symbols here match
-# Table S2 / KEGG hsa04932; converted to ODE node names via GENE_TO_NODE
+# Table S15 / KEGG hsa04932; converted to ODE node names via GENE_TO_NODE
 # (P_* names are already ODE node names and pass through unchanged).
 # ---------------------------------------------------------------------
 RAW_EDGES = [
