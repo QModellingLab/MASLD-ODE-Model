@@ -16,7 +16,7 @@ reported for reference only.
 
 The joint test (all three core outputs simultaneously exceeding the true
 topology's per-output difference) is pre-specified by reference to the
-manuscript's own Supplementary Table S4 "all_outputs_hold" column design
+manuscript's own Supplementary Table S3 "all_outputs_hold" column design
 -- it is not a metric chosen post hoc to rescue a null marginal result,
 though we report the marginal result plainly alongside it either way.
 
