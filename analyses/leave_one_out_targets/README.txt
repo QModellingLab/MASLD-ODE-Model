@@ -1,5 +1,5 @@
 Leave-one-out over the silymarin target set  (Reviewer 1 Major 7 / Reviewer 2 Comment 4 /
-Reviewer 3 Major 5 follow-up; Supplementary Table S16)
+Reviewer 3 Major 5 follow-up; Supplementary Table S6)
 
 Question
 --------
