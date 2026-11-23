@@ -29,7 +29,7 @@ of the active-form trajectory. The model is deterministic (no random seed).
 Output
 ------
 outputs/SuppTable_S17_composition_null_bound.xlsx
-    Sheet 'Advantage_ratio' : one row per scenario (Supplementary Table S17)
+    Sheet 'Advantage_ratio' : one row per scenario (Supplementary Table S12)
     Sheet 'Long_format'     : per-stage reductions for every scenario/output
     Sheet 'Initial_ratios'  : observed NAFL/NASH ratios of the seven nodes
     Sheet 'Metadata'        : settings
