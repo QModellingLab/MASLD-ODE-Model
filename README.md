@@ -2,10 +2,9 @@
 
 Code and analysis pipeline accompanying:
 
-> Tseng, Y.-Y. A transcriptomics-constrained ODE model of MASLD signaling
-> identifies injury drivers and a reproducible stage-dependent predicted
-> response to intervention.
-> *npj Systems Biology and Applications* (under revision).
+> Tseng, Y.-Y. A transcriptomics-constrained ODE model predicts reproducible
+> stage-dependent responses to intervention in MASLD signaling.
+> *npj Systems Biology and Applications* (accepted; in press).
 
 ## Overview
 
@@ -17,23 +16,23 @@ silico* silymarin intervention.
 
 ## Revision analyses (`analyses/`)
 
-Eleven control analyses added during peer review. Each folder is self-contained
-(`README.txt`, script, and the outputs it produces) and is runnable on its own.
+Thirteen control analyses added during peer review. Each folder is self-contained (`README.txt` or `README.md`, script, and the outputs it produces) and is runnable on its own. Supplementary table numbers refer to the published Supplementary Information.
 
 | Folder | Addresses | Supplementary table |
 |---|---|---|
-| `patient_bootstrap_resampling/` | Inter-patient variability (200 stratified bootstrap replicates) | S11 |
-| `alt_node_aggregation/` | Four multi-gene node aggregation rules | S7 |
-| `alt_initial_conditions/` | 3 x 3 grid of active-fraction and output-baseline assumptions | S8 |
-| `auc_window_sensitivity/` | AUC windows of 100, 300, 600 and 1000 h | S9 |
-| `joint_n_ksp_grid/` | Joint 3 x 3 Hill-coefficient / half-saturation grid | S4 |
-| `global_sensitivity_analysis/` | Morris screening over all 58 nodes; topology comparison | — |
-| `random_target_control/` | Random-target and matched-control null distributions (N = 2,000 each) | S10 |
-| `leave_one_out_targets/` | Each silymarin target omitted in turn | S16 |
-| `edge_scramble_control/` | Degree-preserving and degree-unconstrained topology nulls | S5 |
-| `static_hill_curve_control/` | Algebraic steady state and single-reaction Hill reserve | S6 |
-| `equilibrate_then_inhibit/` | Intervention applied from the pre-equilibrated state | S15 |
-| `cohort_permutation_test/` | Cohort-level sign-flip and cohort-block permutation tests | S12 |
+| `patient_bootstrap_resampling/` | Inter-patient variability (200 stratified bootstrap replicates) | S13 |
+| `alt_node_aggregation/` | Four multi-gene node aggregation rules | S18 |
+| `alt_initial_conditions/` | 3 x 3 grid of active-fraction and output-baseline assumptions | S9 |
+| `auc_window_sensitivity/` | AUC windows of 100, 300, 600 and 1000 h | S7 |
+| `joint_n_ksp_grid/` | Joint 3 x 3 Hill-coefficient / half-saturation grid | S14 |
+| `global_sensitivity_analysis/` | Morris screening over all 58 nodes; topology comparison | S2 (S3) |
+| `random_target_control/` | Random-target and matched-control null distributions (N = 2,000 each) | S5 |
+| `leave_one_out_targets/` | Each silymarin target omitted in turn | S6 |
+| `edge_scramble_control/` | Degree-preserving and degree-unconstrained topology nulls | S3 |
+| `static_hill_curve_control/` | Algebraic steady state and single-reaction Hill reserve | S4 |
+| `equilibrate_then_inhibit/` | Intervention applied from the pre-equilibrated state | S8 |
+| `cohort_permutation_test/` | Cohort-level sign-flip and cohort-block permutation tests | S10 |
+| `composition_null_bound/` | Upper bound on the stage-dependent advantage expected from gene-composition effects alone | S12 |
 
 All analyses use fixed random seeds and are exactly reproducible. Raw per-replicate
 records are included as `.jsonl` where the analysis is resampling-based, so the
